@@ -111,7 +111,7 @@
     <version.javadoc>3.12.0</version.javadoc>
     <version.gpg>3.2.8</version.gpg>
     <version.sigstore>2.3.0</version.sigstore>
-    <version.central-publishing>0.11.0</version.central-publishing>
+    <version.central-publishing>0.12.0</version.central-publishing>
     <!-- Runtime integration dependencies (ADR 0020). Spring and AWS BOMs are imported by the modules that use them. -->
     <version.spring-boot>4.1.1</version.spring-boot>
     <version.awssdk>2.55.11</version.awssdk>
