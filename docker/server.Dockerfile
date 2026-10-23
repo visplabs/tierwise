@@ -7,7 +7,7 @@
 # for humans). Update the digests in both files together. docker/README.md explains how.
 
 # Build stage: the Maven Wrapper builds the executable JAR of the server on JDK 25 (ADR 0021, amended; ADR 0022).
-FROM eclipse-temurin:25-jdk-noble@sha256:589ff4cc3f71aab462e7048a47a0d10edf57fbccde3fceea2281e610bf5880b4 AS build
+FROM eclipse-temurin:25-jdk-noble@sha256:ba0f0e1a33864105e1d454e88105c617ab40f71062db1f306bf58be32a3f8e5e AS build
 
 # tierwise-core reads the built-in presets and the IANA zone names from ../../presets and ../../spec/data
 # (see java/tierwise-core/pom.xml), so they are copied to the same relative places under /src.
@@ -32,7 +32,7 @@ RUN set -eu; \
     cp "$jars" /out/tierwise-server.jar
 
 # Runtime stage: a JRE only, with a fixed non-root user.
-FROM eclipse-temurin:25-jre-noble@sha256:d9a39a23634650173f1e2bbc176227af9728587ecf0f4b62d53e9355cd7a19ab AS runtime
+FROM eclipse-temurin:25-jre-noble@sha256:3f2223fe04b750aa5a8179e29b5c9a1ddf7665fc9bb08bfe11ad01d143bc13a5 AS runtime
 
 LABEL org.opencontainers.image.title="tierwise-server" \
       org.opencontainers.image.description="Tierwise control plane: stores bundle versions and serves bundles, /v1/resolve and /v1/decide" \
