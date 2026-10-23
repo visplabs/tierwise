@@ -7,7 +7,7 @@
 # how to read and update them.
 
 # Build stage: the Maven Wrapper builds the fat JAR of the CLI on JDK 25 (ADR 0021, amended); the JARs target Java 17.
-FROM eclipse-temurin:25-jdk-noble@sha256:589ff4cc3f71aab462e7048a47a0d10edf57fbccde3fceea2281e610bf5880b4 AS build
+FROM eclipse-temurin:25-jdk-noble@sha256:ba0f0e1a33864105e1d454e88105c617ab40f71062db1f306bf58be32a3f8e5e AS build
 
 # tierwise-core reads the built-in presets and the IANA zone names from ../../presets and ../../spec/data
 # (see java/tierwise-core/pom.xml), so they are copied to the same relative places under /src.
@@ -31,7 +31,7 @@ RUN set -eu; \
     cp "$jars" /out/tierwise.jar
 
 # Runtime stage: a JRE only, with a fixed non-root user.
-FROM eclipse-temurin:25-jre-noble@sha256:d9a39a23634650173f1e2bbc176227af9728587ecf0f4b62d53e9355cd7a19ab AS runtime
+FROM eclipse-temurin:25-jre-noble@sha256:3f2223fe04b750aa5a8179e29b5c9a1ddf7665fc9bb08bfe11ad01d143bc13a5 AS runtime
 
 LABEL org.opencontainers.image.title="tierwise" \
       org.opencontainers.image.description="Tierwise command line: init, validate, lint, test, compile, codegen, explain" \
