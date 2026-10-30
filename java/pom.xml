@@ -114,7 +114,7 @@
     <version.central-publishing>0.11.0</version.central-publishing>
     <!-- Runtime integration dependencies (ADR 0020). Spring and AWS BOMs are imported by the modules that use them. -->
     <version.spring-boot>4.1.1</version.spring-boot>
-    <version.awssdk>2.55.11</version.awssdk>
+    <version.awssdk>2.57.4</version.awssdk>
     <version.openfeature>1.23.0</version.openfeature>
   </properties>
 
