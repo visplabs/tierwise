@@ -17,7 +17,7 @@
     "sbom": "pnpm --filter @visporg/evaluator --filter @visporg/node --filter @visporg/openfeature exec sh -c 'unset npm_execpath && out=\"${SBOM_DIR:-$PWD/../sbom}\" && mkdir -p node_modules \"$out\" && cyclonedx-npm --ignore-npm-errors --omit dev --mc-type library --spec-version 1.6 --output-format JSON --output-reproducible --output-file \"$out/tierwise-npm-$(basename \"$PWD\").cdx.json\"'"
   },
   "devDependencies": {
-    "@cyclonedx/cyclonedx-npm": "6.0.1",
+    "@cyclonedx/cyclonedx-npm": "7.0.0",
     "@openfeature/core": "1.12.0",
     "@openfeature/server-sdk": "1.23.0",
     "@openfeature/web-sdk": "1.10.0",
